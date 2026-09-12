@@ -1,0 +1,46 @@
+:root {
+  /* Background */
+  --color-bg-primary: #05080d;
+  --color-bg-secondary: #0a1018;
+  --color-bg-card: #0e1621;
+  --color-bg-elevated: #131e2b;
+
+  /* Borders */
+  --color-border: #1d2a38;
+  --color-border-light: #263648;
+
+  /* Text */
+  --color-text-primary: #f4f7fa;
+  --color-text-secondary: #a3afbd;
+  --color-text-muted: #718096;
+
+  /* Status */
+  --color-success: #35e0a1;
+  --color-info: #5bb8ff;
+  --color-warning: #f5b942;
+  --color-danger: #ff5c6c;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Consolas", monospace;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.4);
+
+  /* Layout */
+  --sidebar-width: 248px;
+  --topbar-height: 68px;
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+}
