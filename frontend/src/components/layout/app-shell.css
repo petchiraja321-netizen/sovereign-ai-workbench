@@ -1,0 +1,22 @@
+.app-shell {
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+}
+
+.app-shell__main {
+  width: calc(100% - var(--sidebar-width));
+  min-height: 100vh;
+
+  margin-left: var(--sidebar-width);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell__content {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+
+  padding: 32px;
+}
