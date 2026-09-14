@@ -1,13 +1,9 @@
-import type { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
 import { Topbar } from "./Topbar";
 import "./app-shell.css";
 
-interface AppShellProps {
-  children: ReactNode;
-}
-
-export function AppShell({ children }: AppShellProps) {
+export function AppShell() {
   return (
     <div className="app-shell">
       <Sidebar />
@@ -16,7 +12,7 @@ export function AppShell({ children }: AppShellProps) {
         <Topbar />
 
         <main className="app-shell__content">
-          {children}
+          <Outlet />
         </main>
       </div>
     </div>
