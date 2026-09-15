@@ -1,16 +1,44 @@
-import type { ChangeEvent } from "react";
-
 import {
+  FileText,
   FileUp,
   Image,
-  FileText,
   Table2,
   X,
 } from "lucide-react";
+import type { ChangeEvent } from "react";
 
 interface FileDropzoneProps {
   files: File[];
   onFilesChange: (files: File[]) => void;
+}
+
+function getFileIcon(file: File) {
+  if (file.type.startsWith("image/")) {
+    return <Image size={15} />;
+  }
+
+  if (
+    file.type.includes("spreadsheet") ||
+    file.name.endsWith(".xlsx") ||
+    file.name.endsWith(".xls") ||
+    file.name.endsWith(".csv")
+  ) {
+    return <Table2 size={15} />;
+  }
+
+  return <FileText size={15} />;
+}
+
+function formatFileSize(size: number) {
+  if (size < 1024) {
+    return `${size} B`;
+  }
+
+  if (size < 1024 * 1024) {
+    return `${(size / 1024).toFixed(1)} KB`;
+  }
+
+  return `${(size / 1024 / 1024).toFixed(2)} MB`;
 }
 
 export function FileDropzone({
@@ -35,9 +63,9 @@ export function FileDropzone({
     );
   };
 
-  return (
-    <div className="file-dropzone">
-      <label className="file-dropzone__area">
+  if (files.length === 0) {
+    return (
+      <label className="file-dropzone__empty">
         <input
           type="file"
           multiple
@@ -46,63 +74,50 @@ export function FileDropzone({
           hidden
         />
 
-        <div className="file-dropzone__icon">
-          <FileUp size={22} />
-        </div>
+        <FileUp size={17} />
 
-        <div>
-          <p className="file-dropzone__title">
-            Drop files here or browse
-          </p>
-
-          <p className="file-dropzone__description">
-            PDF, DOCX, XLSX, CSV and images
-          </p>
-        </div>
+        <span>
+          No files attached yet
+        </span>
       </label>
+    );
+  }
 
-      {files.length > 0 && (
-        <div className="file-dropzone__files">
-          {files.map((file, index) => (
-            <div
-              className="file-item"
-              key={`${file.name}-${index}`}
-            >
-              <div className="file-item__icon">
-                {file.type.includes("image") ? (
-                  <Image size={16} />
-                ) : file.type.includes("sheet") ||
-                  file.name.endsWith(".xlsx") ||
-                  file.name.endsWith(".xls") ||
-                  file.name.endsWith(".csv") ? (
-                  <Table2 size={16} />
-                ) : (
-                  <FileText size={16} />
-                )}
-              </div>
+  return (
+    <div className="file-dropzone__files">
+      {files.map((file, index) => (
+        <div
+          className="file-item"
+          key={`${file.name}-${file.size}-${index}`}
+        >
+          <div className="file-item__icon">
+            {getFileIcon(file)}
+          </div>
 
-              <div className="file-item__info">
-                <p className="file-item__name">
-                  {file.name}
-                </p>
+          <div className="file-item__info">
+            <p className="file-item__name">
+              {file.name}
+            </p>
 
-                <p className="file-item__size">
-                  {(file.size / 1024 / 1024).toFixed(2)} MB
-                </p>
-              </div>
+            <p className="file-item__size">
+              {formatFileSize(file.size)}
+            </p>
+          </div>
 
-              <button
-                type="button"
-                className="file-item__remove"
-                onClick={() => removeFile(index)}
-                aria-label={`Remove ${file.name}`}
-              >
-                <X size={14} />
-              </button>
-            </div>
-          ))}
+          <span className="file-item__ready">
+            Ready
+          </span>
+
+          <button
+            type="button"
+            className="file-item__remove"
+            onClick={() => removeFile(index)}
+            aria-label={`Remove ${file.name}`}
+          >
+            <X size={14} />
+          </button>
         </div>
-      )}
+      ))}
     </div>
   );
 }
