@@ -1,57 +1,55 @@
 :root {
   /* ========================================
-     BACKGROUND
+     SOVEREIGN — STEP 41 VISUAL SYSTEM
      ======================================== */
 
-  --color-bg-primary: #05080d;
-  --color-bg-secondary: #0a1018;
-  --color-bg-card: #0e1621;
-  --color-bg-elevated: #131e2b;
+  --color-bg-primary: #03070d;
+  --color-bg-secondary: #07101a;
+  --color-bg-card: #0a1521;
+  --color-bg-elevated: #0e1b2a;
 
-  /* Compatibility aliases used by components */
   --color-background: var(--color-bg-primary);
 
-
-  /* ========================================
+  /* ----------------------------------------
      BORDERS
-     ======================================== */
+     ---------------------------------------- */
 
-  --color-border: #1d2a38;
-  --color-border-light: #263648;
+  --color-border: #14283a;
+  --color-border-light: #1c3b54;
+  --color-border-active: #176080;
 
-
-  /* ========================================
+  /* ----------------------------------------
      TEXT
-     ======================================== */
+     ---------------------------------------- */
 
-  --color-text-primary: #f4f7fa;
-  --color-text-secondary: #a3afbd;
-  --color-text-muted: #718096;
+  --color-text-primary: #f2f7fb;
+  --color-text-secondary: #a9bacb;
+  --color-text-muted: #64788d;
+  --color-text-dim: #43576b;
 
-  /* Compatibility alias used by components */
   --color-text: var(--color-text-primary);
 
+  /* ----------------------------------------
+     ACCENTS
+     ---------------------------------------- */
 
-  /* ========================================
-     ACCENT
-     ======================================== */
+  --color-accent: #28d7ff;
+  --color-accent-bright: #62e6ff;
+  --color-accent-blue: #2d7dff;
+  --color-accent-green: #38d9a5;
 
-  --color-accent: #35e0a1;
-
-
-  /* ========================================
+  /* ----------------------------------------
      STATUS
-     ======================================== */
+     ---------------------------------------- */
 
-  --color-success: #35e0a1;
-  --color-info: #5bb8ff;
-  --color-warning: #f5b942;
-  --color-danger: #ff5c6c;
+  --color-success: #38d9a5;
+  --color-info: #42bfff;
+  --color-warning: #f4bd58;
+  --color-danger: #ff6474;
 
-
-  /* ========================================
+  /* ----------------------------------------
      TYPOGRAPHY
-     ======================================== */
+     ---------------------------------------- */
 
   --font-sans:
     "Inter",
@@ -66,37 +64,41 @@
     "Consolas",
     monospace;
 
-
-  /* ========================================
+  /* ----------------------------------------
      RADIUS
-     ======================================== */
+     ---------------------------------------- */
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --radius-sm: 7px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
 
-
-  /* ========================================
+  /* ----------------------------------------
      SHADOWS
-     ======================================== */
+     ---------------------------------------- */
 
-  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.4);
+  --shadow-sm:
+    0 4px 18px rgba(0, 0, 0, 0.28);
 
+  --shadow-md:
+    0 12px 34px rgba(0, 0, 0, 0.38);
 
-  /* ========================================
+  --shadow-lg:
+    0 24px 70px rgba(0, 0, 0, 0.48);
+
+  --shadow-blue:
+    0 0 28px rgba(40, 215, 255, 0.10);
+
+  /* ----------------------------------------
      LAYOUT
-     ======================================== */
+     ---------------------------------------- */
 
   --sidebar-width: 248px;
   --topbar-height: 68px;
 
-
-  /* ========================================
+  /* ----------------------------------------
      MOTION
-     ======================================== */
+     ---------------------------------------- */
 
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;

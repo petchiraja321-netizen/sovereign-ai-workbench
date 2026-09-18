@@ -9,23 +9,30 @@ import {
   ShieldCheck,
   UserRound,
 } from "lucide-react";
+
+import { NavLink } from "react-router-dom";
+
 import "./sidebar.css";
 
 const mainNavigation = [
   {
     label: "Dashboard",
+    path: "/dashboard",
     icon: LayoutDashboard,
   },
   {
     label: "AI Studio",
+    path: "/ai-studio",
     icon: BrainCircuit,
   },
   {
     label: "Knowledge",
+    path: "/knowledge",
     icon: FileText,
   },
   {
     label: "Tasks",
+    path: "/tasks",
     icon: ClipboardList,
   },
 ];
@@ -33,14 +40,17 @@ const mainNavigation = [
 const systemNavigation = [
   {
     label: "Security",
+    path: "/security",
     icon: ShieldCheck,
   },
   {
     label: "Audit",
+    path: "/audit",
     icon: Activity,
   },
   {
     label: "Deliverables",
+    path: "/deliverables",
     icon: FileText,
   },
 ];
@@ -50,7 +60,10 @@ export function Sidebar() {
     <aside className="sidebar">
       <div className="sidebar__brand">
         <div className="sidebar__brand-mark">
-          <LockKeyhole size={18} strokeWidth={2.2} />
+          <LockKeyhole
+            size={18}
+            strokeWidth={2.2}
+          />
         </div>
 
         <div>
@@ -74,17 +87,24 @@ export function Sidebar() {
             const Icon = item.icon;
 
             return (
-              <button
-                key={item.label}
-                className={`sidebar__nav-item ${
-                  item.label === "Dashboard"
-                    ? "sidebar__nav-item--active"
-                    : ""
-                }`}
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `sidebar__nav-item ${
+                    isActive
+                      ? "sidebar__nav-item--active"
+                      : ""
+                  }`
+                }
               >
-                <Icon size={17} strokeWidth={1.9} />
+                <Icon
+                  size={17}
+                  strokeWidth={1.9}
+                />
+
                 <span>{item.label}</span>
-              </button>
+              </NavLink>
             );
           })}
         </nav>
@@ -100,13 +120,24 @@ export function Sidebar() {
             const Icon = item.icon;
 
             return (
-              <button
-                key={item.label}
-                className="sidebar__nav-item"
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `sidebar__nav-item ${
+                    isActive
+                      ? "sidebar__nav-item--active"
+                      : ""
+                  }`
+                }
               >
-                <Icon size={17} strokeWidth={1.9} />
+                <Icon
+                  size={17}
+                  strokeWidth={1.9}
+                />
+
                 <span>{item.label}</span>
-              </button>
+              </NavLink>
             );
           })}
         </nav>
@@ -127,7 +158,10 @@ export function Sidebar() {
           </div>
         </div>
 
-        <button className="sidebar__user">
+        <button
+          type="button"
+          className="sidebar__user"
+        >
           <div className="sidebar__user-avatar">
             <UserRound size={16} />
           </div>
