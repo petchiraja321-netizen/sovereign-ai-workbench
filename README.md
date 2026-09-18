@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sovereign AI Workbench — Enhanced Member 3 Frontend
 
 Updated enterprise UI for SIH26117 / MRPL.
@@ -67,3 +68,7 @@ The dashboard only provides system/workspace overview and a route into Agent Wor
 - Removed the startup login screen; the workbench opens directly.
 - Removed the User ID and Access Key/password fields from the frontend startup flow.
 - Removed the `AI` text from the animated core; the animation now shows only `CORE`.
+=======
+# sovereign-ai-workbench
+Sovereign AI Workbench — Local-first Agentic AI platform for secure enterprise intelligence.
+>>>>>>> 5a68fecbd058c39f851c6949e441d2eeea466bb0
